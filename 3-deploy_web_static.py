@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """ Fabfile to create and distribute an archive to a web server."""
-    from fabric.api import *
-    import tarfile
-    import os.path
-    import re
-    from datetime import datetime
+from fabric.api
+import *
+import tarfile
+import os.path
+import re
+from datetime import datetime
 
-    env.user = 'ubuntu'
-    env.hosts = ["54.87.171.241", "100.26.235.124"]
-    env.key_filename = "~/id_rsa"
+env.user = 'ubuntu'
+env.hosts = ["54.87.171.241", "100.26.235.124"]
+env.key_filename = "~/id_rsa"
 
 
 def do_pack():
@@ -52,4 +53,3 @@ def deploy():
         return False
     f = do_deploy(path)
     return f
-
